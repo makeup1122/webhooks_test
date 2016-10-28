@@ -6,8 +6,8 @@ http.createServer(function(req, res) {
         post_data += chunk;
     });
     req.on('end', function() {
-        let result = child_process.execSync('git pull origin master');
-        console.log(result);  
+        var result = child_process.execSync('git pull origin master');
+        console.log(result);
     });
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('get push post!');
